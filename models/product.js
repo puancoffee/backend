@@ -14,14 +14,6 @@ const productSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref: 'category'
     },
-    date: {
-        type: String,
-        required: true
-    },
-    time: {
-        type: String,
-        required: true
-    },
     price: {
         type: String,
         required: true

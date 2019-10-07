@@ -24,7 +24,6 @@ module.exports = ({
                         description: req.body.description,
                         category: req.body.category,
                         date: req.body.date,
-                        time: req.body.time,
                         price: req.body.price
                     })
                     product
