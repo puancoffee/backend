@@ -10,8 +10,10 @@ require('dotenv').config()
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const categoryRouter = require('./routes/category')
-const productRouter = require('./routes/product')
+const categoryRouter = require('./routes/category');
+const productRouter = require('./routes/product');
+const detailRouter = require('./routes/detail')
+const orderRouter = require('./routes/order')
 
 const app = express();
 const mongodConnect = process.env.MONGOLAB_URI
@@ -43,5 +45,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/categories', categoryRouter);
 app.use('/product', productRouter);
+app.use('/detail', detailRouter);
+app.use('/order', orderRouter);
 
 module.exports = app;
