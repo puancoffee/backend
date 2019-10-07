@@ -4,6 +4,6 @@ const router = express.Router();
 const orderController = require('../controllers/order')
 
 /* Login Users . */
-router.post('/', orderController.create)
+router.post('/order', orderController.create)
 
 module.exports = router;

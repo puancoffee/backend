@@ -44,8 +44,8 @@ require("./config/passport")(passport);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/categories', categoryRouter);
-app.use('/product', productRouter);
-app.use('/detail', detailRouter);
-app.use('/order', orderRouter);
+app.use('/products', productRouter);
+app.use('/details', detailRouter);
+app.use('/orders', orderRouter);
 
 module.exports = app;

@@ -4,6 +4,6 @@ const router = express.Router();
 const productController = require('../controllers/product')
 
 /* Login Users . */
-router.post('/', productController.create)
+router.post('/product', productController.create)
 
 module.exports = router;

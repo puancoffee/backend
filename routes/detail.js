@@ -4,6 +4,6 @@ const router = express.Router();
 const detailController = require('../controllers/detail')
 
 /* Login Users . */
-router.post('/', detailController.create)
+router.post('/detail', detailController.create)
 
 module.exports = router;
