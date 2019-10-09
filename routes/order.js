@@ -3,7 +3,10 @@ const router = express.Router();
 
 const orderController = require('../controllers/order')
 
-/* Login Users . */
+/* Add new order . */
 router.post('/order', orderController.create)
+
+/* Show data order . */
+router.get('/order', orderController.showOrder)
 
 module.exports = router;

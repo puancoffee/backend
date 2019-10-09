@@ -3,7 +3,9 @@ const router = express.Router();
 
 const CategoryController = require('../controllers/category')
 
-/* Login Users . */
+/* Add new category . */
 router.post('/category', CategoryController.create)
 
+/* show data category . */
+router.get('/category', CategoryController.showCategory)
 module.exports = router;

@@ -38,8 +38,8 @@ module.exports = ({
             })
     }),
     showProduct: ((req, res, next) => {
-        Product.find()
-        .populate('categories', ['name'])
+        Product.find({})
+        .populate('category')
         .then(product => {
             res.json(product)
         })
