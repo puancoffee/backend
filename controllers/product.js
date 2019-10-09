@@ -36,5 +36,15 @@ module.exports = ({
                         })
                 }
             })
+    }),
+    showProduct: ((req, res, next) => {
+        Product.find()
+        .populate('categories', ['name'])
+        .then(product => {
+            res.json(product)
+        })
+        .catch(error => {
+            res.json(error)
+        })
     })
 })
