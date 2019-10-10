@@ -17,7 +17,7 @@ module.exports = ({
                 } else {
                     const order = new Order({
                         name: req.body.name,
-                        detail: req.body.detail
+                        products: req.body.products
                     })
                     order
                         .save()
@@ -32,9 +32,12 @@ module.exports = ({
     }),
     showOrder: ((req, res, next) => {
         Order.find({}).populate('name', ['name', 'email', 'phone']).populate({
-                path: 'detail',
+                path: 'products',
                 populate: {
-                    path: 'event',
+                    path: 'product',
+                    populate: {
+                        path: 'category',
+                    }
                 }
             }).then(detail => {
                 res.json(detail)

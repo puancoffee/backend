@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const detailSchema = new Schema({
-    event: {
+    product: {
         type:Schema.Types.ObjectId,
         ref: 'product'
     },

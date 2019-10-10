@@ -4,15 +4,15 @@ const isEmpty = require("is-empty");
 module.exports = function validateCreateDetail(data) {
     let errors = {};
     // Convert empty fields to an empty string so we can use validator functions
-    data.event = !isEmpty(data.event) ? data.event: "";
+    data.product = !isEmpty(data.product) ? data.product: "";
     data.name = !isEmpty(data.name) ? data.name: "";
     data.date = !isEmpty(data.date) ? data.date: "";
     data.time = !isEmpty(data.time) ? data.time: "";
     data.location = !isEmpty(data.location) ? data.location: "";
 
     // Event checks
-  if (Validator.isEmpty(data.event)) {
-        errors.event = "Event field is required";
+  if (Validator.isEmpty(data.product)) {
+        errors.product = "Product field is required";
       }
     // Name checks
   if (Validator.isEmpty(data.name)) {

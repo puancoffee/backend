@@ -7,8 +7,8 @@ module.exports = function validateCreateInput(data) {
     data.name = !isEmpty(data.name) ? data.name: "";
     data.description = !isEmpty(data.description) ? data.description: "";
     data.category = !isEmpty(data.category) ? data.category: "";
-    data.date = !isEmpty(data.date) ? data.date: "";
-    data.time = !isEmpty(data.time) ? data.time: "";
+    // data.date = !isEmpty(data.date) ? data.date: "";
+    // data.time = !isEmpty(data.time) ? data.time: "";
     data.price = !isEmpty(data.price) ? data.price: "";
 
     // Name checks
@@ -22,14 +22,6 @@ module.exports = function validateCreateInput(data) {
   // Category checks
   if (Validator.isEmpty(data.category)) {
     errors.category = "Category field is required";
-  }
-  // Date checks
-  if (Validator.isEmpty(data.date)) {
-    errors.date = "Date field is required";
-  }
-  // Time checks
-  if (Validator.isEmpty(data.time)) {
-    errors.time = "Time field is required";
   }
   // Price checks
   if (Validator.isEmpty(data.price)) {

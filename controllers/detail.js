@@ -27,7 +27,7 @@ module.exports = ({
 
                 } else {
                     const detail = new Detail({
-                        event: req.body.event,
+                        product: req.body.product,
                         name: req.body.name,
                         date: req.body.date,
                         time: req.body.time,
@@ -46,7 +46,7 @@ module.exports = ({
     }),
     showDetails: ((req, res, next) => {
         Detail.find({})
-        .populate('event')
+        .populate('product')
         .then(detail => {
             res.json(detail)
         })

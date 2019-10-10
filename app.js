@@ -15,6 +15,8 @@ const productRouter = require('./routes/product');
 const detailRouter = require('./routes/detail')
 const orderRouter = require('./routes/order')
 
+
+
 const app = express();
 const mongodConnect = process.env.MONGOLAB_URI
 
@@ -34,7 +36,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('./public', express.static('public'))
+// app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport middleware
 app.use(passport.initialize());

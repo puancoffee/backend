@@ -24,7 +24,8 @@ module.exports = ({
                         description: req.body.description,
                         category: req.body.category,
                         date: req.body.date,
-                        price: req.body.price
+                        price: req.body.price,
+                        images: req.file && req.file.path
                     })
                     product
                         .save()
