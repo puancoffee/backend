@@ -47,5 +47,15 @@ module.exports = ({
         .catch(error => {
             res.json(error)
         })
+    }),
+    showProductById: ((req, res, next) => {
+        Product.findById(req.params.productId)
+        .populate('category').populate('details')
+        .then(product => {
+            res.json(product)
+        })
+        .catch(error => {
+            res.json(error)
+        })
     })
 })

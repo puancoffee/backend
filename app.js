@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const logger = require('morgan');
 const passport = require("passport");
 const mongoose = require('mongoose')
-const cors = require('cors')
+var cors = require('cors')
 require('dotenv').config()
 
 const indexRouter = require('./routes/index');
@@ -22,7 +22,7 @@ const mongodConnect = process.env.MONGOLAB_URI
 
 mongoose.connect(mongodConnect)
 
-app.use(cors());
+app.use(cors())
 app.use(
   cors({
     origin: ["*"],
@@ -36,7 +36,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use('./public', express.static('public'))
+app.use('/public', express.static('public'))
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // Passport middleware

@@ -29,9 +29,12 @@ const upload = multer({
     fileFilter: fileFilter
 });
 
-/* Add Product . */
-router.post('/product', upload.single('images'), productController.create)
 
 /* Show Product . */
 router.get('/product', productController.showProduct)
+/* Show Product By Id . */
+router.get('/product/:productId', productController.showProductById)
+/* Add Product . */
+router.post('/product', upload.single('images'), productController.create)
+
 module.exports = router;

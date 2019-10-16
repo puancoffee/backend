@@ -46,7 +46,25 @@ module.exports = ({
     }),
     showDetails: ((req, res, next) => {
         Detail.find({})
-        .populate('product')
+        .populate({
+            path: 'product',
+        populate:{
+            path: 'category',
+        }})
+        .then(detail => {
+            res.json(detail)
+        })
+        .catch(error => {
+            res.json(error)
+        })
+    }),
+    showDetailsById: ((req, res, next) => {
+        Detail.findById(req.params.detailId)
+        .populate({
+            path: 'product',
+        populate:{
+            path: 'category',
+        }})
         .then(detail => {
             res.json(detail)
         })

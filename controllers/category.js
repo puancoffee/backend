@@ -1,4 +1,5 @@
 const Category = require('../models/category')
+const Product = require('../models/product')
 
 module.exports = ({
     create: ((req, res, next) => {
@@ -12,11 +13,28 @@ module.exports = ({
             })
     }),
     showCategory: ((req, res, next) => {
-        Category.find({}).then(detail => {
-                res.json(detail)
-            })
+        Category.aggregate([
+            {
+              $lookup:
+                {
+                  from: "products",
+                  localField: "name",
+                  foreignField: "_id",
+                  as: "productRef"
+                }
+           },
+           { $match : { _id : _id } }
+        ]).then(detail => {
+            res.json(detail)
             .catch(error => {
                 res.json(error)
             })
+        })
+        // Category.find({}).then(detail => {
+        //         res.json(detail)
+        //     })
+        //     .catch(error => {
+        //         res.json(error)
+        //     })
     })
 })

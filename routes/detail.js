@@ -9,3 +9,7 @@ router.post('/detail', detailController.create)
 /* Show Details Product . */
 router.get('/detail', detailController.showDetails)
 module.exports = router;
+
+/* Show Details Product . */
+router.get('/detail/:detailId', detailController.showDetailsById)
+module.exports = router;
